@@ -1,21 +1,23 @@
 const express = require('express');
-//const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 //const cookieSession = require('cookie-session');
-//const passport = require('passport');
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+
 //const bodyParser = require('body-parser');
-//const keys = require('./config/keys');
+const keys = require('./config/keys');
 //require('./models/User');
 //require('./models/Survey');
-//require('./services/passport');
+require('./services/passport');
 
 //mongoose.Promise = global.Promise;
-//mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI);
 
 const app = express();
 
-app.get('', (req, res) => {
-  res.send({bye: 'buddy'});
-});
+
+
+
 //app.use(bodyParser.json());
 //app.use(
 //  cookieSession({
@@ -26,7 +28,7 @@ app.get('', (req, res) => {
 //app.use(passport.initialize());
 //app.use(passport.session());
 
-//require('./routes/authRoutes')(app);
+require('./routes/authRoutes')(app);
 //require('./routes/billingRoutes')(app);
 //require('./routes/surveyRoutes')(app);
 
