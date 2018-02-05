@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+// above code is a destructured version of:
+// const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   googleId: String,
